@@ -2,7 +2,7 @@
 
 $conn = require __DIR__.'/utils/connection.php';
 
-!$conn->query('DROP TABLE posts');
+$conn->query('DROP TABLE posts');
 
 $sql = '
     create table posts(
