@@ -2,11 +2,14 @@
 
 $conn = require __DIR__.'/utils/connection.php';
 
+!$conn->query('DROP TABLE posts');
+
 $sql = '
     create table posts(
         id int auto_increment primary key,
         title varchar(100) not null,
-        body TEXT not null
+        body TEXT not null,
+        FULLTEXT KEY title (title, body)
     )
 ';
 
